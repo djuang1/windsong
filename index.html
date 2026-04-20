@@ -52,18 +52,6 @@
   }
 
   /* ---------- Page 2: Band bios ---------- */
-  .two-col {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-  .logo-block img {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    display: block;
-  }
   .bio p {
     margin: 0 0 18px 0;
   }
@@ -98,11 +86,23 @@
     display: block;
     background: #eee;
   }
+  .tracks-page-logo {
+    text-align: center;
+    margin: 0 0 40px 0;
+  }
+  .tracks-page-logo img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
   .tracks-heading {
     font-weight: 700;
     text-decoration: underline;
     margin: 0 0 24px 0;
     font-size: 16px;
+    text-align: center;
   }
   .track {
     margin-bottom: 24px;
@@ -130,11 +130,15 @@
   }
   .film-logo {
     margin-bottom: 48px;
+    text-align: center;
   }
   .film-logo img {
     max-width: 320px;
     width: 80%;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .film-copy p {
     margin: 0 0 16px 0;
@@ -193,14 +197,12 @@
     .page { padding: 60px 28px; }
     .cover { padding: 60px 28px; min-height: 40vh; }
     .cover img { width: 85%; }
-    .two-col,
     .tracks-layout,
     .film-layout,
     .contact-layout {
       grid-template-columns: 1fr;
       gap: 40px;
     }
-    .logo-block img,
     .film-logo img,
     .contact-right img.big-logo {
       max-width: 260px;
@@ -228,11 +230,7 @@
 
   <!-- Page 2: Band & members -->
   <section class="page">
-    <div class="two-col">
-      <div class="logo-block">
-        <img src="images/windsong-logo-bold.png" alt="Windsong — Human Conditions" />
-      </div>
-      <div class="bio">
+    <div class="bio">
         <p class="intro">
           <em class="band-name">WINDSONG</em> is a Nashville-based indie band with roots in rock, blues, gospel, and classical music. Uday Sehgal and Brandon Alexander — both addicts in recovery — founded the group in 2023 after becoming friends at treatment in Tennessee. In an effort to heal, they began playing music together every night on the back patio of Windsong, the rehab house where they met and roomed together.
         </p>
@@ -257,12 +255,14 @@
         <p>
           <strong class="name">JEFF KITE</strong> is a producer, guitar and keyboard player who tours with The Voidz (Julian Casablanca) and Cigarettes After Sex.
         </p>
-      </div>
     </div>
   </section>
 
   <!-- Page 3: Track list stories (part 1) -->
   <section class="page">
+    <div class="tracks-page-logo">
+      <img src="images/windsong-logo-bold.png" alt="Windsong — Human Conditions" />
+    </div>
     <div class="tracks-layout">
       <div class="track-photos">
         <img src="images/uday-sitting.jpg" alt="Uday sitting, contemplative" />
@@ -335,7 +335,7 @@
         <div class="film-logo">
           <img src="images/windsong-logo-bold.png" alt="Windsong — Human Conditions" />
         </div>
-        <p>A feature documentary film of the recording sessions, song backstories, and interview footage is currently in post production — with a July 2026 release date. The film was produced by CLJ Films and directed by Joseph Garner (Joker, Joker 2).</p>
+        <p>A feature documentary film of the recording sessions, song backstories, and interview footage is currently in post production — with an August 2026 release date. The film was produced by CLJ Films and directed by Joseph Garner (Joker, Joker 2).</p>
         <hr class="film-divider" />
         <p class="logline"><em>Logline</em>: Two addicts meet in treatment, start writing music together, and record an album to explore the roots of pain and healing.</p>
       </div>
