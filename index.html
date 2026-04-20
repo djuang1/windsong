@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Windsong — Human Conditions</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #000;
+    --bg: #ffffff;
+    --page-max: 1100px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 100px 72px;
+  }
+
+  /* Divider between "pages" mimics the PDF page breaks */
+  .page + .page {
+    border-top: 1px solid #eee;
+  }
+
+  /* ---------- Page 1: Cover ---------- */
+  .cover {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 72px;
+  }
+  .cover img {
+    max-width: 560px;
+    width: 70%;
+    height: auto;
+  }
+
+  /* ---------- Page 2: Band bios ---------- */
+  .two-col {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .logo-block img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    display: block;
+  }
+  .bio p {
+    margin: 0 0 18px 0;
+  }
+  .bio .intro {
+    font-style: italic;
+  }
+  .bio strong.name {
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .bio em.band-name {
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* ---------- Page 3 & 4: Track stories ---------- */
+  .tracks-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .track-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .track-photos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #eee;
+  }
+  .tracks-heading {
+    font-weight: 700;
+    text-decoration: underline;
+    margin: 0 0 24px 0;
+    font-size: 16px;
+  }
+  .track {
+    margin-bottom: 24px;
+  }
+  .track h3 {
+    font-size: 16px;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+  }
+  .track p {
+    margin: 0;
+  }
+
+  /* ---------- Page 5: Film ---------- */
+  .film-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .film-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .film-logo {
+    margin-bottom: 48px;
+  }
+  .film-logo img {
+    max-width: 320px;
+    width: 80%;
+    height: auto;
+  }
+  .film-copy p {
+    margin: 0 0 16px 0;
+  }
+  .film-divider {
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 24px 0;
+  }
+  .logline em {
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* ---------- Page 6: Contact ---------- */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .contact-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .contact-photos img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .contact-right {
+    text-align: center;
+  }
+  .contact-right img.big-logo {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    margin: 0 auto 32px;
+  }
+  .contact-info {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .contact-info a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 820px) {
+    .page { padding: 60px 28px; }
+    .cover { padding: 60px 28px; min-height: 40vh; }
+    .cover img { width: 85%; }
+    .two-col,
+    .tracks-layout,
+    .film-layout,
+    .contact-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .logo-block img,
+    .film-logo img,
+    .contact-right img.big-logo {
+      max-width: 260px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .track-photos,
+    .contact-photos {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .track-photos img,
+    .contact-photos img {
+      width: calc(50% - 12px);
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Page 1: Cover -->
+  <section class="page cover">
+    <img src="images/windsong-logo-script.jpg" alt="Windsong" />
+  </section>
+
+  <!-- Page 2: Band & members -->
+  <section class="page">
+    <div class="two-col">
+      <div class="logo-block">
+        <img src="images/windsong-logo-bold.png" alt="Windsong — Human Conditions" />
+      </div>
+      <div class="bio">
+        <p class="intro">
+          <em class="band-name">WINDSONG</em> is a Nashville-based indie band with roots in rock, blues, gospel, and classical music. Uday Sehgal and Brandon Alexander — both addicts in recovery — founded the group in 2023 after becoming friends at treatment in Tennessee. In an effort to heal, they began playing music together every night on the back patio of Windsong, the rehab house where they met and roomed together.
+        </p>
+        <p>
+          <strong class="name">UDAY SEHGAL</strong> is an entrepreneur with a background in hotels, film and music. He was raised in Chicago, IL and grew up playing guitar in bands through high school and college. He began writing songs at 18 years old. Uday studied mathematics at Northwestern University.
+        </p>
+        <p>
+          <strong class="name">BRANDON ALEXANDER</strong> grew up in Nashville, TN. He was first exposed to music through church — playing piano, organ, and singing in the choir. Brandon went on to study at Fisk University, and was a member of the prestigious Fisk Jubilee Singers. He is the grateful husband of his loving wife, and proud father of their 4-year old daughter.
+        </p>
+        <p>
+          <strong class="name">JOHN MASON</strong> is a session bass player and has toured with Darius Rucker for 18 years.
+        </p>
+        <p>
+          <strong class="name">JOE TRAVERS</strong> plays drums and won a Grammy for live performance with the Zappa Band. He also toured with Joe Satriani and played Royal Albert Hall in London.
+        </p>
+        <p>
+          <strong class="name">LACY ROSTYAK</strong> is a conservatory-trained concert violinist with recording experience alongside Shania Twain and Deadmau5.
+        </p>
+        <p>
+          <strong class="name">RAVI RAO</strong> is a Chicago-based blues guitar player heavily influenced by Stevie Ray Vaughan and Jimi Hendrix.
+        </p>
+        <p>
+          <strong class="name">JEFF KITE</strong> is a producer, guitar and keyboard player who tours with The Voidz (Julian Casablanca) and Cigarettes After Sex.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 3: Track list stories (part 1) -->
+  <section class="page">
+    <div class="tracks-layout">
+      <div class="track-photos">
+        <img src="images/uday-sitting.jpg" alt="Uday sitting, contemplative" />
+        <img src="images/brandon-piano.jpg" alt="Brandon at the piano" />
+      </div>
+      <div class="tracks-text">
+        <h2 class="tracks-heading">Track List Stories</h2>
+
+        <div class="track">
+          <h3>Sunrise-</h3>
+          <p>My parents were raised in an ashram, a spiritual community in southern india, founded by Sri Aurobindo and Mira Alfassa, also known as The Mother. They wrote volumes on the nature of man, evolution of consciousness, integral yoga, and spiritual life. One of the seminal works is called 'The Life Divine' which I've always been drawn to. My folks later immigrated to Chicago, where my brother and I were born and raised. I was given the name Uday, by the ashram's caretaker, which in Sanskrit translates to sunrise.</p>
+        </div>
+
+        <div class="track">
+          <h3>We Are Through-</h3>
+          <p>I was diagnosed with bipolar II twenty years ago, and later developed a substance use disorder. After treatments and relapses, I have tried and failed my way to a clean healthy daily life. They are both progressive illnesses, that is, things tend to get worse over time — if you don't get better first. I came to characterize my addiction as the manifestation of a toxic relationship. Starts good, ends bad, and ultimately a radioactive way to cope. I can't quite compare the experience to anything else — the chaos and destruction of being brought to your knees by a drug. I wrote this to remind myself of the nature of the beast, who patiently waits at the door.</p>
+        </div>
+
+        <div class="track">
+          <h3>Free-</h3>
+          <p>My many experiences with depression have more in common than apart, characterized largely by an absolute eradication of my own will — to move, think, feel, or consider a future. That which you need most in the moment, is exactly what is not available. There is no ability to recognize a way forward, much less any point. I have noticed however, this too does pass. And what lies on the other side, once the pain becomes your ally, may actually be worth the walk.</p>
+        </div>
+
+        <div class="track">
+          <h3>Awake-</h3>
+          <p>It is said the final step of recovery is a spiritual awakening. I am looking forward to that moment. Truly on the edge of my seat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 4: Track list stories (part 2) -->
+  <section class="page">
+    <div class="tracks-layout">
+      <div class="track-photos">
+        <img src="images/uday-guitar.jpg" alt="Uday playing guitar" />
+        <img src="images/brandon-recording.jpg" alt="Brandon recording vocals" />
+      </div>
+      <div class="tracks-text">
+        <div class="track">
+          <h3>Hard Way Home-</h3>
+          <p>I met Baker in treatment, we happened to cross over on both of our stays. He suffered intense early age trauma, and grew up in an environment of drug abuse. Baker regularly cut school in favor of the skate park, and on certain occasions, a jail cell. After a long journey, he is living a clean life for the first time. He likes to write poetry as his creative outlet, and provided these lyrics for me, as a record of his struggle.</p>
+        </div>
+
+        <div class="track">
+          <h3>Linda Lee-</h3>
+          <p>My first experience with tragedy and loss was in high school. One of my best friends was out driving late at night with his mother, a vibrant and caring single mom of two. They got into a car crash, which she did not survive. It is one of those moments that still occurs in slow motion for me, with profound emotion, and gut wrenching to this day. I wrote the song when I was 18. It is dedicated to the incredibly loving memory of Linda Lee Lawrence.</p>
+        </div>
+
+        <div class="track">
+          <h3>Close Your Eyes-</h3>
+          <p>I have a tight group of friends from growing up together. One of them is named Scott, a loving father of three, and an avid enthusiast of the Chicago Cubs and early 90's hip hop. After a high conflict divorce, job loss and subsequent battles with intense depression, Scott took his life. It was Thanksgiving day, just hours after we all were together with him. It is a very painful pill to swallow, in part, as it happened on our watch. The song is called 'close your eyes' — I would like to say it's a celebration of Scott, but in truth, it is an expression of pain and absence.</p>
+        </div>
+
+        <div class="track">
+          <h3>His Love is Kind-</h3>
+          <p>My best friend from childhood is named Linda. We grew up together on the same street, would constantly walk around the mall, and talk on the phone even after we'd just been hanging out doing nothing. As we moved through high school and college, and she formed relationships with guys that I felt to be under-qualified for the position, she knew where I stood. Then she met Zac, her now husband, and the father of their two boys. He and I always got along great, several shared interests, particularly we both love Linda. Zac has always been kind, friendly, authentic; and extremely hospitable. We wrote this one for him. He, even now in his final days, is the most courageous guy I know.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 5: Documentary film -->
+  <section class="page">
+    <div class="film-layout">
+      <div class="film-photo">
+        <img src="images/filmmaker-dog.jpg" alt="Filmmaker with dog during recording sessions" />
+      </div>
+      <div class="film-copy">
+        <div class="film-logo">
+          <img src="images/windsong-logo-bold.png" alt="Windsong — Human Conditions" />
+        </div>
+        <p>A feature documentary film of the recording sessions, song backstories, and interview footage is currently in post production — with a July 2026 release date. The film was produced by CLJ Films and directed by Joseph Garner (Joker, Joker 2).</p>
+        <hr class="film-divider" />
+        <p class="logline"><em>Logline</em>: Two addicts meet in treatment, start writing music together, and record an album to explore the roots of pain and healing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 6: Contact -->
+  <section class="page">
+    <div class="contact-layout">
+      <div class="contact-photos">
+        <img src="images/uday-with-friend.jpg" alt="Uday with friend" />
+        <img src="images/uday-smiling.jpg" alt="Uday smiling" />
+      </div>
+      <div class="contact-right">
+        <img class="big-logo" src="images/windsong-logo-script.jpg" alt="Windsong" />
+        <div class="contact-info">
+          <div><a href="mailto:uday@windsong.music">uday@windsong.music</a></div>
+          <div>(323) 369-5093</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
