@@ -11,6 +11,7 @@
     --rule: #000;
     --bg: #ffffff;
     --page-max: 1100px;
+    --photo-col: 340px;
   }
 
   * { box-sizing: border-box; }
@@ -67,7 +68,7 @@
   /* ---------- Page 3 & 4: Track stories ---------- */
   .tracks-layout {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: var(--photo-col) 1fr;
     gap: 80px;
     align-items: start;
   }
@@ -116,7 +117,7 @@
   /* ---------- Page 5: Film ---------- */
   .film-layout {
     display: grid;
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: var(--photo-col) 1fr;
     gap: 80px;
     align-items: start;
   }
@@ -153,7 +154,7 @@
   /* ---------- Page 6: Contact ---------- */
   .contact-layout {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: var(--photo-col) 1fr;
     gap: 80px;
     align-items: center;
   }
