@@ -1,0 +1,269 @@
+:root {
+  --ink: #1a1a1a;
+  --muted: #444;
+  --rule: #000;
+  --bg: #ffffff;
+  --page-max: 1100px;
+  --photo-col: 340px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 15px 75px;
+}
+
+.page-film {
+  border-top: 1px solid #eee;
+}
+
+.page-contact {
+  margin-top: 50px;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- Page 1: Cover ---------- */
+.cover {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 72px;
+}
+.cover img {
+  max-width: 560px;
+  width: 70%;
+  height: auto;
+}
+
+/* ---------- Page 2: Band bios ---------- */
+.bio p {
+  margin: 0 0 18px 0;
+}
+.bio strong.name {
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.bio em.band-name {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ---------- Page 3 & 4: Track stories ---------- */
+.tracks-layout {
+  display: grid;
+  grid-template-columns: var(--photo-col) 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.track-photos {
+  display: flex;
+  flex-direction: column;
+  margin-top: 180px;
+  gap: 24px;
+}
+.track-photos img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #eee;
+}
+.tracks-page-logo {
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+.tracks-page-logo img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.tracks-heading {
+  font-weight: 700;
+  text-decoration: underline;
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  text-align: center;
+}
+.track {
+  margin-bottom: 24px;
+}
+.track h3 {
+  font-size: 16px;
+  margin: 0 0 4px 0;
+  font-weight: 700;
+}
+.track p {
+  margin: 0;
+}
+
+/* ---------- Page 5: Film ---------- */
+.film-layout {
+  display: grid;
+  grid-template-columns: var(--photo-col) 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.film-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.film-logo {
+  margin-bottom: 48px;
+  text-align: center;
+}
+.film-logo img {
+  max-width: 320px;
+  width: 80%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.film-copy {
+  margin-top: 300px;
+}
+.film-copy p {
+  margin: 0 0 16px 0;
+}
+.film-divider {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 24px 0;
+}
+.logline em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ---------- Page 6: Contact ---------- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: var(--photo-col) 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.contact-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-photos img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.contact-right {
+  text-align: center;
+}
+.contact-right img.big-logo {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: 0 auto 32px;
+}
+.contact-info {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.contact-info a {
+  color: inherit;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 820px) {
+  .page { 
+    padding: 0px 28px; 
+    padding-bottom: 0;
+  }
+  /* Cover: drop min-height + vertical centering so the logo isn’t floating in empty space */
+  .cover {
+    min-height: 0;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 28px 0;
+  }
+  .cover img {
+    width: 85%;
+    margin-bottom: 0;
+  }
+  /* First content block after cover: was 60px top + cover’s bottom padding — tighten */
+  .cover + .page {
+    padding-top: 28px;
+  }
+  /* Track list: desktop uses 180px top offset to line photos up with copy — on mobile it stacks and reads as a hole under the bold logo */
+  .track-photos {
+    margin-top: 0;
+  }
+  .tracks-page-logo {
+    margin-bottom: 16px;
+  }
+  .tracks-page-logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  /* Track list part 1: trim top (under bio) and bottom before part 2 */
+  section.page:has(.tracks-page-logo) {
+    padding-top: 28px;
+    padding-bottom: 24px;
+  }
+  /* Part 1 → part 2: avoid 60px+60px between “Awake” and the next photo row */
+  section.page:has(.tracks-page-logo) + section.page {
+    padding-top: 20px;
+  }
+  section.page:has(.tracks-page-logo) .tracks-text .track:last-child {
+    margin-bottom: 0;
+  }
+  .tracks-layout,
+  .film-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  /* Tracks only: a bit tighter between photo row and following copy than film/contact */
+  .tracks-layout {
+    gap: 16px;
+  }
+  /* Film: desktop offsets copy to align with grid — remove on narrow screens */
+  .film-copy {
+    margin-top: 0;
+  }
+  .film-logo img,
+  .contact-right img.big-logo {
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .track-photos,
+  .contact-photos {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .track-photos img,
+  .contact-photos img {
+    width: calc(50% - 12px);
+  }
+}
