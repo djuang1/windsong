@@ -171,9 +171,13 @@ html, body {
 .tracks-heading {
   font-weight: 700;
   text-decoration: underline;
-  margin: 0 0 24px 0;
+  margin: 1.55em 0 24px 0;
   font-size: 16px;
   text-align: center;
+}
+/* Part 2: one line of space before “Hard Way Home” (first track after the page break) */
+section:has(.tracks-page-logo) + section .track:first-of-type {
+  margin-top: 1.55em;
 }
 .track {
   margin-bottom: 24px;
