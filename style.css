@@ -203,6 +203,13 @@ section:has(.tracks-page-logo) + section .track:first-of-type {
   height: auto;
   display: block;
 }
+.film-photo > img:first-of-type {
+  max-width: 260px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.55em;
+}
 .film-logo {
   margin-bottom: 48px;
   text-align: center;
