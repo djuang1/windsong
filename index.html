@@ -10,7 +10,7 @@
   if (t === 'dark' || t === 'light') {
     document.documentElement.setAttribute('data-theme', t);
   } else {
-    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.setAttribute('data-theme', 'dark');
   }
 })();
 </script>
@@ -31,7 +31,7 @@
 </head>
 <body>
 
-  <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" title="Dark mode">
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="true" aria-label="Switch to light mode" title="Light mode">
     <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
     </span>
@@ -195,7 +195,7 @@
         btn.setAttribute('title', dark ? 'Light mode' : 'Dark mode');
       }
     }
-    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
     apply(current);
     if (btn) {
       btn.addEventListener('click', function () {
