@@ -3,6 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+(function () {
+  var k = 'windsong-theme';
+  var t = localStorage.getItem(k);
+  if (t === 'dark' || t === 'light') {
+    document.documentElement.setAttribute('data-theme', t);
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
 
 <meta property="og:title" content="Windsong - Human Conditions" />
 <meta property="og:image" content="https://windsong.music/images/windsong-logo-bold.png" />
@@ -19,6 +30,15 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" title="Dark mode">
+    <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
+    </span>
+    <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+    </span>
+  </button>
 
   <!-- Page 1: Cover -->
   <section class="page cover">
@@ -160,5 +180,29 @@
     </div>
   </section>
 
+  <script>
+  (function () {
+    var root = document.documentElement;
+    var key = 'windsong-theme';
+    var btn = document.getElementById('theme-toggle');
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      try { localStorage.setItem(key, theme); } catch (e) {}
+      if (btn) {
+        var dark = theme === 'dark';
+        btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+        btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('title', dark ? 'Light mode' : 'Dark mode');
+      }
+    }
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    apply(current);
+    if (btn) {
+      btn.addEventListener('click', function () {
+        apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+  </script>
 </body>
 </html>
