@@ -31,7 +31,7 @@ html[data-theme="dark"] .contact-right img.big-logo {
   box-sizing: border-box;
 }
 html[data-theme="dark"] .cover img {
-  padding: 20px 22px;
+  padding: 10px 12px;
 }
 
 * { box-sizing: border-box; }
