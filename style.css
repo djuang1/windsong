@@ -22,7 +22,7 @@ html[data-theme="dark"] {
 }
 
 /* Logos on white “cards” so they read on black like the source files */
-html[data-theme="dark"] .cover img,
+html[data-theme="dark"] .cover > img,
 html[data-theme="dark"] .tracks-page-logo img,
 html[data-theme="dark"] .film-photo > img:first-of-type,
 html[data-theme="dark"] .contact-right img.big-logo {
@@ -30,7 +30,7 @@ html[data-theme="dark"] .contact-right img.big-logo {
   padding: 14px 16px;
   box-sizing: border-box;
 }
-html[data-theme="dark"] .cover img {
+html[data-theme="dark"] .cover > img {
   padding: 10px 12px;
 }
 
@@ -114,14 +114,47 @@ html, body {
 .cover {
   min-height: 50vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.25rem;
   padding: 20px 72px;
 }
-.cover img {
+.cover > img {
   max-width: 560px;
   width: 70%;
   height: auto;
+}
+.cover-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.cover-social__link {
+  display: flex;
+  line-height: 0;
+  border-radius: 8px;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.cover-social__link:hover {
+  opacity: 0.88;
+}
+.cover-social__link:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.cover-social__link img {
+  display: block;
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+}
+html[data-theme="dark"] .cover-social__link {
+  border: 1px solid #575555;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 /* ---------- Page 2: Band bios ---------- */
@@ -286,11 +319,12 @@ section:has(.tracks-page-logo) + section .track:first-of-type {
   /* Cover: drop min-height + vertical centering so the logo isn’t floating in empty space */
   .cover {
     min-height: 0;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     padding: 60px 28px 0;
+    gap: 1rem;
   }
-  .cover img {
+  .cover > img {
     width: 85%;
     margin-bottom: 0;
   }
