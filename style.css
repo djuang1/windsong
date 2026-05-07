@@ -27,7 +27,7 @@ html[data-theme="dark"] .tracks-page-logo img,
 html[data-theme="dark"] .film-photo > img:first-of-type,
 html[data-theme="dark"] .contact-right img.big-logo {
   background: var(--logo-box-bg);
-  padding: 14px 16px;
+  padding: 6px 6px;
   box-sizing: border-box;
 }
 html[data-theme="dark"] .cover > img {
