@@ -33,38 +33,29 @@ html[data-theme="dark"] .contact-right img.big-logo {
 
 * { box-sizing: border-box; }
 
-/* Top-left language (EN / HI) */
+/* Top-left language: one circular toggle, flag = active language */
 .lang-toggle {
   position: fixed;
   top: max(12px, env(safe-area-inset-top, 0px));
   left: max(12px, env(safe-area-inset-left, 0px));
   z-index: 1000;
-  display: flex;
-  align-items: stretch;
-  border-radius: 999px;
-  overflow: hidden;
-  border: 1px solid var(--page-border);
-  background: var(--bg);
-  -webkit-tap-highlight-color: transparent;
-}
-.lang-toggle__btn {
   margin: 0;
-  padding: 4px 8px;
-  min-width: 40px;
+  padding: 0;
+  width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0;
-  border-left: 1px solid var(--page-border);
+  line-height: 0;
   cursor: pointer;
   color: var(--ink);
-  background: transparent;
-  line-height: 0;
-  transition: background 0.12s ease;
+  background: var(--bg);
+  border: 1px solid var(--page-border);
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
 }
 .lang-toggle__flag {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -72,34 +63,28 @@ html[data-theme="dark"] .contact-right img.big-logo {
 .lang-toggle__flag svg {
   display: block;
 }
-.lang-toggle__btn:first-child {
-  border-left: 0;
+html[data-lang="en"] .lang-toggle__flag--en,
+html[data-lang="hi"] .lang-toggle__flag--hi {
+  display: flex;
 }
-.lang-toggle__btn:hover {
-  background: rgba(0, 0, 0, 0.04);
+.lang-toggle:hover {
+  border-color: var(--rule);
 }
-html[data-theme="dark"] .lang-toggle__btn:hover {
-  background: rgba(255, 255, 255, 0.06);
-}
-.lang-toggle__btn:focus {
+.lang-toggle:focus {
   outline: none;
 }
-.lang-toggle__btn:focus-visible {
+.lang-toggle:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 2px;
-  z-index: 1;
-}
-.lang-toggle__btn[aria-pressed="true"] {
-  background: rgba(0, 0, 0, 0.08);
 }
 html[data-theme="dark"] .lang-toggle {
   background: #111;
   border-color: #3a3a3a;
 }
-html[data-theme="dark"] .lang-toggle__btn[aria-pressed="true"] {
-  background: rgba(255, 255, 255, 0.12);
+html[data-theme="dark"] .lang-toggle:hover {
+  border-color: #666;
 }
-html[data-theme="dark"] .lang-toggle__btn:focus-visible {
+html[data-theme="dark"] .lang-toggle:focus-visible {
   outline-color: #ccc;
 }
 

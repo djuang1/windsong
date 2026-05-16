@@ -10,9 +10,13 @@
       en: 'Windsong — Human Conditions',
       hi: 'विंडसॉन्ग — ह्यूमन कंडिशन्स',
     },
-    'ui.langGroup': {
-      en: 'Language',
-      hi: 'भाषा',
+    'ui.langSwitchToHi': {
+      en: 'Switch to Hindi',
+      hi: 'हिन्दी में बदलें',
+    },
+    'ui.langSwitchToEn': {
+      en: 'Switch to English',
+      hi: 'अंग्रेज़ी में बदलें',
     },
     'theme.toLight.aria': {
       en: 'Switch to light mode',
@@ -236,16 +240,19 @@
 
     document.title = t('page.title', lang);
 
-    var group = document.getElementById('lang-toggle');
-    if (group) {
-      group.setAttribute('aria-label', t('ui.langGroup', lang));
-    }
-    var btnEn = document.getElementById('lang-en');
-    var btnHi = document.getElementById('lang-hi');
-    if (btnEn) btnEn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
-    if (btnHi) btnHi.setAttribute('aria-pressed', lang === 'hi' ? 'true' : 'false');
+    refreshLangToggleChrome(lang);
 
     refreshThemeChrome(lang);
+  }
+
+  function refreshLangToggleChrome(lang) {
+    var btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    var next = lang === 'en' ? 'hi' : 'en';
+    var key = next === 'hi' ? 'ui.langSwitchToHi' : 'ui.langSwitchToEn';
+    var label = t(key, lang);
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('title', stripTags(label));
   }
 
   function refreshThemeChrome(lang) {
@@ -280,16 +287,11 @@
     var lang = root.getAttribute('data-lang') === 'hi' ? 'hi' : 'en';
     applyI18n(lang);
 
-    var btnEn = document.getElementById('lang-en');
-    var btnHi = document.getElementById('lang-hi');
-    if (btnEn) {
-      btnEn.addEventListener('click', function () {
-        applyI18n('en');
-      });
-    }
-    if (btnHi) {
-      btnHi.addEventListener('click', function () {
-        applyI18n('hi');
+    var langBtn = document.getElementById('lang-toggle');
+    if (langBtn) {
+      langBtn.addEventListener('click', function () {
+        var cur = root.getAttribute('data-lang') === 'hi' ? 'hi' : 'en';
+        applyI18n(cur === 'en' ? 'hi' : 'en');
       });
     }
 
