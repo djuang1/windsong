@@ -33,6 +33,76 @@ html[data-theme="dark"] .contact-right img.big-logo {
 
 * { box-sizing: border-box; }
 
+/* Top-left language (EN / HI) */
+.lang-toggle {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top, 0px));
+  left: max(12px, env(safe-area-inset-left, 0px));
+  z-index: 1000;
+  display: flex;
+  align-items: stretch;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--page-border);
+  background: var(--bg);
+  -webkit-tap-highlight-color: transparent;
+}
+.lang-toggle__btn {
+  margin: 0;
+  padding: 4px 8px;
+  min-width: 40px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-left: 1px solid var(--page-border);
+  cursor: pointer;
+  color: var(--ink);
+  background: transparent;
+  line-height: 0;
+  transition: background 0.12s ease;
+}
+.lang-toggle__flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.lang-toggle__flag svg {
+  display: block;
+}
+.lang-toggle__btn:first-child {
+  border-left: 0;
+}
+.lang-toggle__btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+html[data-theme="dark"] .lang-toggle__btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.lang-toggle__btn:focus {
+  outline: none;
+}
+.lang-toggle__btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  z-index: 1;
+}
+.lang-toggle__btn[aria-pressed="true"] {
+  background: rgba(0, 0, 0, 0.08);
+}
+html[data-theme="dark"] .lang-toggle {
+  background: #111;
+  border-color: #3a3a3a;
+}
+html[data-theme="dark"] .lang-toggle__btn[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.12);
+}
+html[data-theme="dark"] .lang-toggle__btn:focus-visible {
+  outline-color: #ccc;
+}
+
 /* Top-right light / dark control */
 .theme-toggle {
   position: fixed;
@@ -90,6 +160,10 @@ html, body {
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+
+html[data-lang="hi"] body {
+  font-family: "Noto Sans Devanagari", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .page {
