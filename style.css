@@ -1912,7 +1912,14 @@ html[data-lang="hi"] body {
 
 @media (max-width: 820px) {
 
-  /* Home — space the rule evenly between icons and trailer */
+  /* Hairline rules are desktop-only */
+  .cover > .section-rule,
+  .page-film > .section-rule,
+  .page-film .film-divider {
+    display: none;
+  }
+
+  /* Home — space between icons and trailer */
   .cover > .cover-video {
     margin-top: 16px;
   }
