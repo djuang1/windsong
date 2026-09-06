@@ -132,14 +132,27 @@
                 <img src="images/windsong_logo_black_album.png" data-i18n="alt.albumLogo" data-i18n-attr="alt" alt="Windsong — Human Conditions" />
             </a>
             </div>
-        <div class="film-layout">
-            <div class="film-photo">
-            <img src="images/filmmaker-dog.jpg" data-i18n="alt.filmmakerDog" data-i18n-attr="alt" alt="Filmmaker with dog during recording sessions" />
+        <!-- Trailer -->
+        <div class="cover-video">
+            <div class="cover-video__frame">
+                <iframe
+                        src="https://player.vimeo.com/video/1218974284?h=4535419d74&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;playsinline=1"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        title="Windsong Trailer"
+                ></iframe>
+            </div>
         </div>
+
+        <div class="film-layout">
         <div class="film-copy">
             <p data-i18n="film.intro">A feature documentary detailing the recording sessions, song backstories, and interview footage will be released on Apple TV in November 2026. The film was produced by Joseph Garner (Joker, Joker 2) and directed by Meliek Gaynor.</p>
             <hr class="film-divider" />
             <p class="logline" data-i18n="film.logline"><em>Logline</em>: Two addicts meet in treatment, start writing music together, and record an album to explore the roots of pain and healing.</p>
+            <div class="film-photo">
+                <img src="images/filmmaker-dog.jpg" data-i18n="alt.filmmakerDog" data-i18n-attr="alt" alt="Filmmaker with dog during recording sessions" />
+            </div>
             <img class="film-photo__henna"
                  src="images/Uday_Henna.jpg"
                  alt="Uday with henna" />
@@ -151,6 +164,7 @@
             </div>
     </div>
 </section>
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script src="i18n.js" defer></script>
 <footer class="site-footer site-footer--documentary"> <div>©2026 Windsong Music LLC. All rights reserved</div> <a href="mailto:uday@windsong.music">uday@windsong.music</a> </footer>
 </body>
