@@ -1868,3 +1868,68 @@ html[data-lang="hi"] body {
     display: block;
   }
 }
+
+/* =========================================================
+   SECTION RULE
+   Same hairline as the footer's top border.
+   ========================================================= */
+
+.section-rule {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--page-border);
+  margin: 16px auto 0;
+}
+
+@media (min-width: 821px) {
+
+  /* Match the banner / footer width */
+  .cover > .section-rule {
+    width: 85%;
+    max-width: 800px;
+    /* The 90px icons overflow the 48px .cover-social box by 21px */
+    margin: 51px auto 0;
+  }
+
+  /* The trailer is reordered below the copy on desktop, so the rule
+     follows it to stay between the two. Its bottom margin is 10px
+     because the trailer already carries 20px of its own. */
+  .page-film > .section-rule {
+    order: 1;
+    margin: 30px 0 10px;
+  }
+
+  .page-film > .cover-video {
+    order: 2;
+  }
+
+}
+
+/* =========================================================
+   MOBILE VERTICAL RHYTHM
+   Desktop is intentionally untouched.
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  /* Home — space the rule evenly between icons and trailer */
+  .cover > .cover-video {
+    margin-top: 16px;
+  }
+
+  /* Film — space between the trailer and the copy */
+  .page-film .film-copy {
+    margin-top: 16px;
+  }
+
+  /* Film — tighten logline → photos */
+  .page-film .film-copy > .film-photo > img {
+    margin-top: 16px;
+  }
+
+  /* Film — tighten photos → footer */
+  .site-footer.site-footer--documentary {
+    margin-top: 16px;
+  }
+
+}
