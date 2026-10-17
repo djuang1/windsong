@@ -1773,7 +1773,7 @@ html[data-lang="hi"] body {
   /* .cover-social is a fixed 48px tall, so the 90px icons
      overflow it — push the trailer clear of them. */
   .cover > .cover-video {
-    margin-top: 30px;
+    margin-top: 81px;
   }
 
 }
@@ -1891,16 +1891,9 @@ html[data-lang="hi"] body {
     margin: 51px auto 0;
   }
 
-  /* The trailer is reordered below the copy on desktop, so the rule
-     follows it to stay between the two. Its bottom margin is 10px
-     because the trailer already carries 20px of its own. */
-  .page-film > .section-rule {
-    order: 1;
-    margin: 30px 0 10px;
-  }
-
   .page-film > .cover-video {
     order: 2;
+    margin-top: 60px;
   }
 
 }
