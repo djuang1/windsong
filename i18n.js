@@ -10,6 +10,21 @@
       en: 'Windsong — Human Conditions',
       hi: 'विंडसॉन्ग — ह्यूमन कंडिशन्स',
     },
+    'press.title': {
+      en: 'Windsong — Press',
+      hi: 'विंडसॉन्ग — प्रेस',
+    },
+    'nav.press': { en: 'press', hi: 'प्रेस' },
+    'press.heading': { en: 'Press', hi: 'प्रेस' },
+    'press.mediaInquiries': { en: 'Media Inquiries:', hi: 'मीडिया पूछताछ:' },
+    'aria.windsongTrailer': {
+      en: 'Watch the Windsong trailer',
+      hi: 'विंडसॉन्ग का ट्रेलर देखें',
+    },
+    'alt.moviePoster': {
+      en: 'Windsong documentary movie poster',
+      hi: 'विंडसॉन्ग डॉक्यूमेंटरी फ़िल्म का पोस्टर',
+    },
     'ui.langSwitchToHi': {
       en: 'Switch to Hindi',
       hi: 'हिन्दी में बदलें',
@@ -88,9 +103,9 @@
     },
     'bio.intro': {
       en:
-        '<em class="band-name">WINDSONG</em> is a Nashville-based indie folk band with roots in rock, blues and gospel music. Their first album “Human Conditions” was released in 2026. Uday Sehgal and Brandon Alexander — both addicts in recovery — founded the group after becoming friends at treatment in Tennessee. In an effort to heal, they began playing music together every night on the back patio of Windsong, the rehab house where they met and roomed together.<br/><br/>A feature documentary of the story is coming soon on Apple TV.',
+        '<a href="press.html"><em class="band-name">WINDSONG</em></a> is a Nashville-based indie folk band with roots in rock, blues and gospel music. Their first album “Human Conditions” was released in 2026. Uday Sehgal and Brandon Alexander — both addicts in recovery — founded the group after becoming friends at treatment in Tennessee. In an effort to heal, they began playing music together every night on the back patio of Windsong, the rehab house where they met and roomed together.<br/><br/>A feature documentary of the story is coming soon on Apple TV. <a href="press.html">Press Kit HERE</a>',
       hi:
-        '<em class="band-name">WINDSONG</em> नैशविले स्थित एक इंडी बैंड है जिसकी जड़ें रॉक, ब्लूज़, गॉस्पेल और शास्त्रीय संगीत में हैं। इनका पहला एल्बम “Human Conditions” 2026 में जारी हुआ। उदय सहगल और ब्रैंडन अलेक्ज़ेंडर — दोनों नशे से उबर रहे हैं — ने टेनेसी में इलाज के दौरान दोस्त बनने के बाद इस समूह की नींव रखी। ठीक होने की कोशिश में उन्होंने हर रात साथ में संगीत बजाना शुरू किया, विंडसॉन्ग के पिछले आँगन पर, उसी रिहैब घर में जहाँ वे मिले और साथ रहे। <br/><br/>इस कहानी पर आधारित एक फ़ीचर डॉक्यूमेंटरी फ़िल्म जल्द ही Apple TV पर आने वाली है।',
+        '<a href="press.html"><em class="band-name">WINDSONG</em></a> नैशविले स्थित एक इंडी बैंड है जिसकी जड़ें रॉक, ब्लूज़, गॉस्पेल और शास्त्रीय संगीत में हैं। इनका पहला एल्बम “Human Conditions” 2026 में जारी हुआ। उदय सहगल और ब्रैंडन अलेक्ज़ेंडर — दोनों नशे से उबर रहे हैं — ने टेनेसी में इलाज के दौरान दोस्त बनने के बाद इस समूह की नींव रखी। ठीक होने की कोशिश में उन्होंने हर रात साथ में संगीत बजाना शुरू किया, विंडसॉन्ग के पिछले आँगन पर, उसी रिहैब घर में जहाँ वे मिले और साथ रहे। <br/><br/>इस कहानी पर आधारित एक फ़ीचर डॉक्यूमेंटरी फ़िल्म जल्द ही Apple TV पर आने वाली है। <a href="press.html">प्रेस किट यहाँ</a>',
     },
     'bio.uday': {
       en:
@@ -238,7 +253,7 @@
       }
     });
 
-    document.title = t('page.title', lang);
+    document.title = t(root.getAttribute('data-page-title') || 'page.title', lang);
 
     refreshLangToggleChrome(lang);
 

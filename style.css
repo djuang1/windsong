@@ -648,7 +648,7 @@ html[data-lang="hi"] body {
     margin: 0;
   }
   .cover-nav {
-    position: relative;
+    position: static;
 
     width: 85%;
     max-width: 800px;
@@ -666,7 +666,7 @@ html[data-lang="hi"] body {
   /* Vertical navigation column */
   .cover-nav .site-nav__links {
       position: absolute !important;
-      top: -269px !important;
+      top: 12px !important;
       left: 50% !important;
 
       width: max-content !important;
@@ -1932,4 +1932,83 @@ html[data-lang="hi"] body {
     margin-top: 16px;
   }
 
+}
+
+
+/* ---------- Press and original album footer ---------- */
+
+.bio a,
+.page-press a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.site-footer__album {
+  display: block;
+  width: 96px;
+  margin: 24px auto 0;
+  line-height: 0;
+}
+
+.site-footer__album img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-footer__album:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.page-press {
+  width: calc(100% - 56px);
+  max-width: 800px;
+  padding: 28px 0;
+}
+
+.page-press h1 {
+  margin: 0 0 28px;
+  font-size: 24px;
+}
+
+.press-contact {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.press-contact__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.press-contact h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.press-contact address {
+  font-style: normal;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.site-footer.site-footer--press {
+  width: calc(100% - 56px);
+  max-width: 800px;
+  margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+  .press-contact {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .press-contact__logo {
+    max-width: 180px;
+  }
 }
