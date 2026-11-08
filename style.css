@@ -1969,7 +1969,11 @@ html[data-lang="hi"] body {
 
 .page-press h1 {
   margin: 0 0 28px;
-  font-size: 24px;
+}
+
+.page-press h1,
+.press-contact h2 {
+  font-size: 18px;
 }
 
 .press-contact {
@@ -1987,7 +1991,6 @@ html[data-lang="hi"] body {
 
 .press-contact h2 {
   margin: 0 0 16px;
-  font-size: 18px;
 }
 
 .press-contact address {
